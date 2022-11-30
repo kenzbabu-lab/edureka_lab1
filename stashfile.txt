@@ -1,0 +1,1 @@
+Created just to check if the changes in this file can be kept alive from next commit using 'git stash'
