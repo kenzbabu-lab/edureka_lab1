@@ -1,0 +1,1 @@
+path=$PWD;s=0;parked_list=parked_list_`date +%F_%X`;for cli in `cat migrated_cli_list`; do s=`expr $s + 1`; echo -e "$s) $cli:" |tee -a $path/$parked_list; (echo -e ". type: NSR client; name: $cli\nupdate protection group list: MIGRATED;") | nsradmin -i- >/dev/null;echo -e "sh protection group list\np type: NSR client;name: $cli"|nsradmin -i- |tee -a $path/$parked_list;done &
